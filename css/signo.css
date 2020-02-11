@@ -1,0 +1,95 @@
+.signoIco img {
+	max-width: 200px;  max-height: 200px;
+	height: auto; width: auto;
+	margin: 10px auto 0 auto;
+	}
+
+.ficha_signo-A { margin-bottom: 20px; }
+.ficha_signo-A .shadow {padding: 0 10px}
+.ficha_signo-A h1 { margin-top: 10px; }
+.ficha_signo-A img { width: 100%; }
+.ficha_signo-A .price { font-weight: bold; font-size: 30px; }
+.ficha_signo-A small { font-weight: bold; letter-spacing: 1px; line-height: normal; font-size: 65%; }
+.ficha_signo-A p { margin-bottom: 10px; }
+.ficha_signo-A  b { color: #4c5166; }
+.ficha_signo-A-simbol { margin:20px auto 10px auto; padding-top: 5px; text-transform: uppercase; }
+.ficha_signo-A-simbol img { width: 60px; }
+
+
+
+.signoColors { 
+	width: 49px; 
+	height: 49px; 
+	border-radius: 50%; 
+	margin: 4px 10px 0 10px; 
+	display: inline-block; 
+	border:2px solid #000; 
+	}
+.BGamarillo { 
+	background: #ffd401;
+	}
+.BGblanco { 
+	background: #ffffff;
+	}
+.BGmagenta { 
+	background: #ff3399;
+	}
+.BGmarrón { 
+	background: #993300;
+	}
+.BGnaranja { 
+	background: #f15a21;
+	}
+.BGnegro { 
+	background: #000000;
+	}
+.BGrojo-brillante { 
+	background: #ee1c25;
+	}
+.BGrojo-oscuro { 
+	background: #bb020a;
+	}
+.BGrosa { 
+	background: #ff6699;
+	}
+.BGverde { 
+	background: #8fbe3e;
+	}
+
+
+.BGwater { background: url(../provisionales/bg.jpg); background-position: bottom center; background-size: cover; background-attachment: fixed; }
+.BGwater h2, .BGwater p { color: #0b6677; }
+.BGgradient h2, .BGgradient p { color: white; }
+.BGviolet { background: url(../provisionales/bgViolet2.jpg); background-position: center center; background-size: cover; background-attachment: fixed; padding-bottom: 50px; padding-top: 50px }
+
+.signo h2 { margin-bottom: 30px; }
+.signoMejorPeor h2 { color: #7048ad; font-size: 2em; margin-bottom: 1.5em; }
+.signoMejorPeor p { color: #7048ad; font-size: 1.2em ; margin-bottom: 0.5em; }
+.signoMejorPeor p b { font-size: 1.6em; }
+
+
+.compatiblidad { margin-bottom: 30px; padding-top: 10px; padding-bottom: 10px; }
+.compatiblidad td { padding: 5px; width: 33%; }
+.compatiblidad table { width: 100%; }
+.compatibilidad img { width: 40px; }
+.compatiblidad p { font-size: 16px; margin-bottom: 0px; border-bottom: 1px dashed  #ddd; padding-bottom: 5px; text-transform: uppercase; }
+.amor { color: #f0a795; }
+.amorD { color: #f74e6f; }
+.trabajo { color: #d6e243; }
+.trabajoD { color: #a8d116; }
+.amistad { color: #7fdcf3; }
+.amistadD { color: #4cabe9; }
+.mujer, .mujer h2 { color: #c8a0de; }
+.mujerD, .mujer h3 { color: #a270c1; }
+.hombre {color: #f6d045 ;}
+.hombreD { color: #f6a357 }
+
+
+
+/***ALLL***/
+.brdTop { border-top: 1px solid #dee2e6; }
+.brdSx { border-left: 1px solid #dee2e6; }
+.brdSxD { border-left: 1px dashed #dee2e6; }
+.mt20 { margin-top: 20px;}
+.my-100 { margin:100px auto;}
+.my-50 { margin: 50px auto; }
