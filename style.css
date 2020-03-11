@@ -82,6 +82,19 @@ a:hover {
   text-decoration: underline;
 }
 
-
-.border-bottom { border-bottom: 1px solid #dee2e6 !important; }
-
+.border-bottom { 
+  border-bottom: 1px solid #dee2e6; 
+}
+.hidden {
+  display:none !important;
+} /*Revisar LICIA, este !important es porque #menu-main li ya tiene un display:inline;*/
+.capital { 
+  text-transform: capitalize; 
+}
+.marPad0 {
+  margin:0; 
+  padding: 0;
+}
+.my-40 {
+  margin: 40px auto;
+}

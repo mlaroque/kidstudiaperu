@@ -1,0 +1,90 @@
+.signoIco img { 
+	max-width: 200px;  
+	max-height: 200px; 
+	height: auto; 
+	width: auto; 
+	margin: 10px auto 0 auto;
+	}
+.ficha_signo-A { 
+	margin-bottom: 20px;
+	}
+.ficha_signo-A .shadow {
+	padding: 0 5px;
+	}
+.ficha_signo-A h1 {
+	margin-top: 10px;
+	}
+.ficha_signo-A img {
+	width: 100%;
+	}
+.ficha_signo-A .price {
+	font-weight: bold; 
+	font-size: 30px;
+	}
+.ficha_signo-A small {
+	font-weight: bold; 
+	letter-spacing: 1px; 
+	line-height: 10px; 
+	font-size: 65%; 
+	margin-top: 0; 
+	display: block; 
+	text-align: center; 
+	width: 100%;
+	}
+.ficha_signo-A p { 
+	margin-bottom: 10px;
+	}
+.ficha_signo-A  b { 
+	color: #4c5166;
+	}
+.ficha_signo-A-simbol { 
+	margin:15px auto 5px auto; 
+	padding-top: 5px; 
+	text-transform: uppercase; 
+	display: inline-block;
+	}
+.ficha_signo-A-simbol img { 
+	width: 60px;
+	}
+.ficha_signo-A-simbol table { 
+	width: 98%; 
+	margin: 0 auto;
+	}
+.ficha_signo-A-stars {
+	padding: 10px 0;
+}
+.ficha_signo-A-stars img { 
+	width: 25px; 
+	}
+.ficha_signo-A-stars td {
+	padding: 5px;
+    margin: 10px 0;
+	}
+.ficha_signo-A-txt {
+	padding: 10px 0;
+	}
+.ficha_signo-A-txt p {
+	margin-bottom: 0px;
+	}
+
+.ficha_signo-A-lunas { 
+	margin: 10px 0;
+	}
+.ficha_signo-A-lunas img {
+	height: 40px;
+	}
+.horoscopo p {
+	text-align: justify; 
+	margin-bottom: 3em; 
+	line-height: 2em;
+	}
+.SignIntro {
+    font-size: 1.3em;
+    text-align: center;
+	}
+.BGwater {
+    font-size: 1.3em;
+    text-align: center; 
+    color: #75d4e8; 
+    padding: 30px 0;
+	}

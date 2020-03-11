@@ -47,7 +47,26 @@ function add_custom_box() {
             'signo_compatibilidad_amistad_inner_custom_box',  
              $post->post_type                      
         );
-	}
+	}else if($post->post_type === "horoscopos"){
+        if($post->post_parent != 145){
+            add_meta_box(
+                'horoscopo_intro_data_id',            
+                'Introducción',      
+                'horoscopo_intro_inner_custom_box',  
+                 $post->post_type                      
+            );
+        }
+
+        if($post->post_parent > 0 && $post->post_parent != 145){
+           add_meta_box(
+                'horoscopo_ficha_data_id',            
+                'Ficha de signo para ' . $post->post_title,      
+                'horoscopo_ficha_inner_custom_box',  
+                 $post->post_type                      
+            );         
+        }
+
+    }
 
 }
 
@@ -56,6 +75,7 @@ function add_custom_box() {
 /***********************************/
 
 require_once ( get_template_directory() . '/functions/metas-bloques/signo.php' );
+require_once ( get_template_directory() . '/functions/metas-bloques/horoscopo.php' );
 
 /***********************************/
 /****************END*************/
@@ -72,8 +92,9 @@ function save_postdata( $post_id ) {
 		basic_input_text_meta_save('ficha_elemento',$post_id);
 		basic_input_text_meta_save('ficha_num_suerte',$post_id);
 		basic_input_text_meta_save('ficha_color',$post_id);
+        basic_input_text_meta_save('ficha_piedra',$post_id);
 		//Características
-		image_meta_save('signo_carac_imagen','signo_carac_imagen_file',$post->ID);
+		//image_meta_save('signo_carac_imagen','signo_carac_imagen_file',$post->ID);
 		basic_input_text_meta_save('signo_carac_polaridad',$post_id);
 		basic_input_text_meta_save('signo_carac_modalidad',$post_id);
 		basic_input_text_meta_save('signo_carac_casa',$post_id);
@@ -109,8 +130,21 @@ function save_postdata( $post_id ) {
 		basic_input_text_meta_save('signo_comp_amistad_nosoporta',$post_id);
 		basic_input_text_meta_save('signo_comp_amistad_comoes',$post_id);
 		basic_input_text_meta_save('signo_comp_amistad_tener',$post_id);
+        
 
-	}
+	}else if($post->post_type === "horoscopos"){
+        basic_input_text_meta_save('horoscopo_ficha_signo',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_periodo',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_amor',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_dinero',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_salud',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_luna_nueva',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_luna_llena',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_num_suerte',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_dia_semana',$post_id);
+        basic_input_text_meta_save('horoscopo_ficha_texto',$post_id);
+        basic_input_text_meta_save('horoscopo_intro',$post_id);
+    }
 
 }
 add_action( 'save_post', 'save_postdata' );
@@ -149,6 +183,49 @@ function image_meta_save($input_name, $input_file_name, $post_id){
     }else if( array_key_exists($input_name, $_POST ) ) {
             update_post_meta( $post_id,$input_name, $_POST[$input_name]);
     }
+
+}
+
+function build_input_text($name,$title,$placeholder,$help = "",$textarea=false){
+    global $post;
+    $GLOBALS["name"] = $name;
+    $GLOBALS["title"] = $title;
+    $GLOBALS["placeholder"] = $placeholder; 
+    $GLOBALS["help"] = $help;
+    ob_start();
+    if($textarea){
+        get_template_part("functions/metas-bloques/inputs/textarea");
+    }else{
+        get_template_part("functions/metas-bloques/inputs/input-text"); 
+    }
+    return ob_get_clean();
+
+}
+
+function build_select($name,$title,$default_value,$options,$multi=false){
+    global $post;
+    $GLOBALS["name"] = $name;   
+    $GLOBALS["title"] = $title;
+    $GLOBALS["default_value"] = $default_value; 
+    $GLOBALS["options"] = $options;
+    ob_start();
+    if($multi){
+        get_template_part("functions/metas-bloques/inputs/select-multiple");
+    }else{
+        get_template_part("functions/metas-bloques/inputs/select"); 
+    }
+    
+    return ob_get_clean();
+
+}
+
+function build_image($name,$title){
+    global $post;
+    $GLOBALS["name"] = $name;   
+    $GLOBALS["title"] = $title;
+    ob_start();
+    get_template_part("functions/metas-bloques/inputs/image");
+    return ob_get_clean();
 
 }
 

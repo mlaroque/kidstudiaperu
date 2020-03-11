@@ -144,6 +144,7 @@ function create_post_type() {
             ),  
         'public' => true,  
         'menu_position' => 4,  
+        'hierarchical' => true,  
         'taxonomies' => array( 'category', 'post_tag' ),   
         'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
         )  
@@ -165,12 +166,75 @@ function create_post_type() {
 
 }
 
+/* Añadimos un submenu para editar un texto de cierre para todo el post type */
+
+function texto_cierre_horoscopo() {
+    add_submenu_page(
+        'edit.php?post_type=horoscopos',
+        'Texto de cierre',
+        'Texto de cierre',
+        'manage_options',
+        'texto-cierre-horoscopo-ref',
+        'texto_cierre_horoscopo_callback'
+    );
+}
+add_action('admin_menu', 'texto_cierre_horoscopo');
+
+function texto_cierre_horoscopo_callback() { 
+
+    $post = get_post(145);
+    $GLOBALS["post"] = $post;
+
+    if ( array_key_exists("horoscopos_texto_cierre", $_POST ) ) {
+        $save_val = $_POST["horoscopos_texto_cierre"];
+        $meta_exists = update_post_meta( $post->ID,"horoscopos_texto_cierre",$save_val); 
+        if($meta_exists){
+            echo "Texto guardado!";
+        }   
+    }   
+    
+
+    ?>
+    <div class="wrap">
+        <h1>Texto de cierre</h1>
+        <form method="post">
+        <?php echo build_input_text("horoscopos_texto_cierre","Texto:","","Terminar siempre los textos invitando al lector a compartir el texto y los retos  y dejar sus comentarios. Cerrar siempre recordándoles que astrologuías les desea la mejor vibra cósmica o alguno otro recordatorio del nombre de la página y sus buenos deseos para el usuario.",true); ?>
+        <input type="submit" id="texto_cierre" class="button action" value="Guardar">
+        </form>
+    </div>
+    <?php
+}
+
 /**************************************/
 /***********META BOXES*****************/
 /**************************************/ 
 
 /* Incluimos los shortcodes del antiguo canvas que nos hacen falta */
 require_once ( get_template_directory() . '/functions/metas.php' );
+
+
+/**************************************/
+/***********END*****************/
+/**************************************/ 
+
+/**************************************/
+/***********SHORTCODES*****************/
+/**************************************/ 
+
+/* Incluimos los shortcodes del antiguo canvas que nos hacen falta */
+require_once ( get_template_directory() . '/functions/shortcodes.php' );
+
+
+/**************************************/
+/***********END*****************/
+/**************************************/ 
+
+/**************************************/
+/***********FUNCIONES UTILES*****************/
+/**************************************/ 
+
+/* Incluimos los shortcodes del antiguo canvas que nos hacen falta */
+require_once ( get_template_directory() . '/functions/utils.php' );
 
 
 /**************************************/

@@ -1,0 +1,53 @@
+.alert-amor { 
+  margin: 80px 20px 80px auto; 
+  text-align: right; width: 88%; 
+  transform:rotate(3deg) 
+} 
+.bg-amor {
+  font-size: 1.4rem; 
+  padding: 0.5rem 1rem; 
+  color: #fff; 
+  background: #f74e6f; 
+  line-height: 2.3;
+}
+
+.alert-cuidado { 
+  margin: 80px auto 80px 20px; 
+  text-align: left;
+  width: 88%; 
+  transform:rotate(-3deg);
+} 
+.bg-cuidado {
+  font-size: 1.4rem; 
+  padding: 0.5rem 1rem; 
+  color: #fff; background: #fcad13; 
+  line-height: 2.3;
+}
+ 
+.alert-consejo { 
+  margin: 80px 40px 80px auto; 
+  text-align: right; 
+  width: 88%; 
+  transform:rotate(3deg);
+} 
+.bg-consejo {
+  font-size: 1.4rem; 
+  padding: 0.5rem 1rem;
+  color: #fff; 
+  background: #1ad2c7;
+  line-height: 2.3;
+}
+
+.alert-mision { 
+  margin: 80px 40px 80px auto; 
+  text-align: right; 
+  width: 88%; 
+  transform:rotate(3deg);
+} 
+.bg-mision {
+  font-size: 1.4rem; 
+  padding: 0.5rem 1rem;
+  color: #fff; 
+  background: #74c0f4;
+  line-height: 2.3;
+}

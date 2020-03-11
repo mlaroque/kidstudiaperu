@@ -3,8 +3,7 @@
 
 	function lazyLoad() {
 	    lazyImg.forEach(img => {
-	        if (img.offsetTop < window.innerHeight + window.pageYOffset + inAdvance && img.className.indexOf("loaded") < 0
-	        	&& img.offsetTop > 0) {
+	        if (img.y < window.innerHeight + window.pageYOffset + inAdvance && img.className.indexOf("loaded") < 0) {
 	        	img.setAttribute("src",img.dataset.src);
 	        	img.removeAttribute("data-src");
 	            img.classList.add('loaded');

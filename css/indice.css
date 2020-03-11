@@ -1,4 +1,13 @@
 
-.indice { color: lightseagreen; margin-bottom: 20px; }
-.indice a { padding: 10px 0; display: block; color: lightseagreen; }
-.indice li {margin-bottom: 3px}
+.indice { 
+	color: lightseagreen; 
+	margin-bottom: 20px; 
+}
+.indice a { 
+	padding: 10px 0; 
+	display: block; 
+	color: lightseagreen; 
+}
+.indice li {
+	margin-bottom: 3px;
+}

@@ -23,6 +23,10 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/indice.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/signo.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/fuentes.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/alerts.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/horoscopos.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/widgets.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/comments.css">
 <?php wp_head(); ?>
 <body <?php body_class(); ?>>
 
@@ -48,6 +52,7 @@
       	<?php wp_nav_menu(array(
 	                       'theme_location' => 'header',
 	                       'container' => false,
+	                       'walker' => new LCMN_Walker(),
 	                       'items_wrap' => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>') )?>
       </div>
     </div>
