@@ -91,4 +91,10 @@ add_filter( 'wp_unique_post_slug', 'mg_unique_post_slug', 10, 6 );
    return $original_slug;
   }
 
+/*Escape the dollar sign: useful when WP or PHP tries to translate it to a variable */
+function escape_dollar($string_to_escape){
+    return str_replace("$","$&#8205;",$string_to_escape);
+}
+
+
 ?>

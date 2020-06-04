@@ -9,6 +9,14 @@
  * @since 1.0.0
  */
 
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+    add_theme_support( 'title-tag' );
+
 add_theme_support( 'post-thumbnails' );
 
 // This theme uses wp_nav_menu() in one location.
@@ -136,11 +144,11 @@ add_action( 'widgets_init', 'lacomuna_theme_widgets_init' );
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {  
-    register_post_type( 'horoscopos',  
+    register_post_type( 'escuela',  
         array(  
             'labels' => array(  
-                'name' => __( 'Horoscopos' ),  
-                'singular_name' => __( 'Horoscopo' )  
+                'name' => __( 'Escuelas' ),  
+                'singular_name' => __( 'Escuela' )  
             ),  
         'public' => true,  
         'menu_position' => 4,  
@@ -150,66 +158,13 @@ function create_post_type() {
         )  
     );
 
-    register_post_type( 'signo',  
-        array(  
-            'labels' => array(  
-                'name' => __( 'Signos' ),  
-                'singular_name' => __( 'Signo' )  
-            ),  
-        'public' => true,  
-        'menu_position' => 5,  
-        'taxonomies' => array( 'category', 'post_tag' ),   
-        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
-        )  
-    );
-
-
 }
 
-/* Añadimos un submenu para editar un texto de cierre para todo el post type */
-
-function texto_cierre_horoscopo() {
-    add_submenu_page(
-        'edit.php?post_type=horoscopos',
-        'Texto de cierre',
-        'Texto de cierre',
-        'manage_options',
-        'texto-cierre-horoscopo-ref',
-        'texto_cierre_horoscopo_callback'
-    );
-}
-add_action('admin_menu', 'texto_cierre_horoscopo');
-
-function texto_cierre_horoscopo_callback() { 
-
-    $post = get_post(145);
-    $GLOBALS["post"] = $post;
-
-    if ( array_key_exists("horoscopos_texto_cierre", $_POST ) ) {
-        $save_val = $_POST["horoscopos_texto_cierre"];
-        $meta_exists = update_post_meta( $post->ID,"horoscopos_texto_cierre",$save_val); 
-        if($meta_exists){
-            echo "Texto guardado!";
-        }   
-    }   
-    
-
-    ?>
-    <div class="wrap">
-        <h1>Texto de cierre</h1>
-        <form method="post">
-        <?php echo build_input_text("horoscopos_texto_cierre","Texto:","","Terminar siempre los textos invitando al lector a compartir el texto y los retos  y dejar sus comentarios. Cerrar siempre recordándoles que astrologuías les desea la mejor vibra cósmica o alguno otro recordatorio del nombre de la página y sus buenos deseos para el usuario.",true); ?>
-        <input type="submit" id="texto_cierre" class="button action" value="Guardar">
-        </form>
-    </div>
-    <?php
-}
 
 /**************************************/
 /***********META BOXES*****************/
 /**************************************/ 
 
-/* Incluimos los shortcodes del antiguo canvas que nos hacen falta */
 require_once ( get_template_directory() . '/functions/metas.php' );
 
 

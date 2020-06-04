@@ -22,10 +22,12 @@ if ( post_password_required() ) {
 ?>
 <div class="container-fluid lc_comments marPad0">
 	<div class="row">
-		<div class="col-12 marPad0">
-			<img src="https://astrologuias.com/wp-content/themes/LCtheme2020/images/nubesTop.svg">
+		<div class="col-12 marPad0 books">
+			
 		</div>
 	</div>
+			<h2 class="text-center">¿TIENES PREGUNTAS?</h2>
+
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
@@ -39,7 +41,6 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h2 class="text-center">¿TIENES PREGUNTAS? CUÉNTANOS CÓMO VAS CON TUS RETOS</h2>
 		<p><i><small>
 			<?php
 				printf( // WPCS: XSS OK.
@@ -135,9 +136,8 @@ if ( post_password_required() ) {
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row booksBtm">
 		<div class="col-12 marPad0">
-			<img src="https://astrologuias.com/wp-content/themes/LCtheme2020/images/nubes.svg">
 		</div>
 	</div>
 </div>

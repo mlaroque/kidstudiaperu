@@ -1,14 +1,17 @@
+.books {height: 100px; background: url(https://kidstudia.com/wp-content/themes/LCtheme2020/images/books.svg); background-repeat: repeat-x;}
+.booksBtm {height: 100px; background: url(https://kidstudia.com/wp-content/themes/LCtheme2020/images/booksBtm.svg); background-repeat: repeat-x; margin-top: 30px; }
+
 .lc_comments {
-	background: #f1eff3;
-	font-family: 'Montserrat', sans-serif; 
-	color: #7d7b8d; 
+	color: #fff; 
 	font-size: 16px;
+	background-color: #663300;
 }
+.lc_comments h2, .lc_comments h3, .lc_comments label, .comment-notes { color: #fff; }
 .lc_comments a, .lc_comments a:visited {
-	color: #54a0d4;
+	color: #fcfcfc;
 }
 .lc_comments a:focus, .lc_comments a:hover {
-	color: #3480b4;
+	color: #fff;
 	text-decoration: none;
 }
 .lc_input {

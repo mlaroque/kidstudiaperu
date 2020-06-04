@@ -18,4 +18,16 @@ function alert( $atts, $content = null ) {
 	return $output;
 }
 
+add_shortcode('contact_form', 'contact_form');
+
+function contact_form ($content){
+
+	ob_start();
+	get_template_part("post_templates/widgets/contact-form");
+	$content .= ob_get_clean();
+		
+	return $content;
+}
+
+
 ?>

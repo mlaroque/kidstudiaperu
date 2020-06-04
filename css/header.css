@@ -1,6 +1,6 @@
 /**HEADER B CSS**/
 header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .navbar {
   position: relative;
@@ -79,7 +79,7 @@ header {
 }
 @media (min-width: 576px) {
   .logo { 
-    width: 450px; 
+    width: 230px; 
   }
 }
 .navbar {
@@ -104,7 +104,7 @@ header {
 
 #menu-main li a:hover, 
 #menu-main li a:focus { 
-    background: #1ad2c7;
+    background: #ed6a4b;
     text-decoration: none;
     color: #fff;
 }
@@ -248,7 +248,7 @@ ul.sub-menu {
 
 .sub-menu li a:hover, 
 .sub-menu li a:focus { 
-    color: purple;
+    color: #ed6a4b;
     text-decoration: none;
 }
 

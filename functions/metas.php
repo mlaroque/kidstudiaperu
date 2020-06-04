@@ -4,78 +4,57 @@
 add_action( 'add_meta_boxes', 'add_custom_box' );
 function add_custom_box() {
 	global $post;
-	if($post->post_type === "signo"){
-		add_meta_box(
-            'signo_ficha_data_id',            
-            'Ficha de ' . $post->post_title,      
-            'signo_ficha_inner_custom_box',  
-             $post->post_type                      
-        );
-        add_meta_box(
-            'signo_carac_data_id',            
-            'Características astrológicas del ' . $post->post_title,      
-            'signo_carac_inner_custom_box',  
-             $post->post_type                      
-        );
-        add_meta_box(
-            'signo_comoes_data_id',            
-            '¿Como es ' . $post->post_title . '?',      
-            'signo_comoes_inner_custom_box',  
-             $post->post_type                      
-        );
-        add_meta_box(
-            'signo_lomejor_data_id',            
-            'Lo mejor y peor de ' . $post->post_title,      
-            'signo_lomejor_inner_custom_box',  
-             $post->post_type                      
-        );
-        add_meta_box(
-            'signo_compatibilidad_amor_data_id',            
-            'Compatibilidad en el amor de ' . $post->post_title,      
-            'signo_compatibilidad_amor_inner_custom_box',  
-             $post->post_type                      
-        );
-        add_meta_box(
-            'signo_compatibilidad_trabajo_data_id',            
-            'Compatibilidad en el trabajo y los negocios de ' . $post->post_title,      
-            'signo_compatibilidad_trabajo_inner_custom_box',  
-             $post->post_type                      
-        );
-        add_meta_box(
-            'signo_compatibilidad_amistad_data_id',            
-            'Compatibilidad en la amistad de ' . $post->post_title,      
-            'signo_compatibilidad_amistad_inner_custom_box',  
-             $post->post_type                      
-        );
-	}else if($post->post_type === "horoscopos"){
-        if($post->post_parent != 145){
+	if($post->post_type === "escuela"){
+        if($post->post_parent == 0){
             add_meta_box(
-                'horoscopo_intro_data_id',            
-                'Introducción',      
-                'horoscopo_intro_inner_custom_box',  
+                'escuela_ficha_data_id',            
+                'Ficha general',      
+                'escuela_ficha_inner_custom_box',  
                  $post->post_type                      
             );
-        }
-
-        if($post->post_parent > 0 && $post->post_parent != 145){
-           add_meta_box(
-                'horoscopo_ficha_data_id',            
-                'Ficha de signo para ' . $post->post_title,      
-                'horoscopo_ficha_inner_custom_box',  
+            add_meta_box(
+                'escuela_datos_adicionales_ficha_data_id',            
+                'Datos adicionales',      
+                'escuela_datos_adicionales_inner_custom_box',  
                  $post->post_type                      
-            );         
+            );
+            add_meta_box(
+                'escuela_contacto_ficha_data_id',            
+                'Contacto',      
+                'escuela_contacto_inner_custom_box',  
+                 $post->post_type                      
+            );
+            add_meta_box(
+                'escuela_galeria_ficha_data_id',            
+                'Galería',      
+                'escuela_galeria_inner_custom_box',  
+                 $post->post_type                      
+            );          
+        }else{
+            add_meta_box(
+                'nivel_datos_adicionales_ficha_data_id',            
+                'Datos adicionales',      
+                'nivel_datos_adicionales_inner_custom_box',  
+                 $post->post_type                      
+            ); 
+            add_meta_box(
+                'nivel_costos_ficha_data_id',            
+                'Costos y Colegiaturas',      
+                'nivel_costos_inner_custom_box',  
+                 $post->post_type                      
+            ); 
         }
 
-    }
+	}
 
 }
 
 /***********************************/
-/****************SIGNOS*************/
+/****************ESCUELAS*************/
 /***********************************/
 
-require_once ( get_template_directory() . '/functions/metas-bloques/signo.php' );
-require_once ( get_template_directory() . '/functions/metas-bloques/horoscopo.php' );
+require_once ( get_template_directory() . '/functions/metas-bloques/escuela.php' );
+require_once ( get_template_directory() . '/functions/metas-bloques/nivel.php' );
 
 /***********************************/
 /****************END*************/
@@ -84,67 +63,69 @@ require_once ( get_template_directory() . '/functions/metas-bloques/horoscopo.ph
 function save_postdata( $post_id ) {
 	global $post;
 
-	if($post->post_type === "signo"){
-		//Ficha
-		basic_input_text_meta_save('ficha_nombre',$post_id);
-		basic_input_text_meta_save('ficha_signo_inicio',$post_id);
-		basic_input_text_meta_save('ficha_signo_fin',$post_id);
-		basic_input_text_meta_save('ficha_elemento',$post_id);
-		basic_input_text_meta_save('ficha_num_suerte',$post_id);
-		basic_input_text_meta_save('ficha_color',$post_id);
-        basic_input_text_meta_save('ficha_piedra',$post_id);
-		//Características
-		//image_meta_save('signo_carac_imagen','signo_carac_imagen_file',$post->ID);
-		basic_input_text_meta_save('signo_carac_polaridad',$post_id);
-		basic_input_text_meta_save('signo_carac_modalidad',$post_id);
-		basic_input_text_meta_save('signo_carac_casa',$post_id);
-		basic_input_text_meta_save('signo_carac_cuerpo',$post_id);
-		basic_input_text_meta_save('signo_carac_planeta',$post_id);
-		basic_input_text_meta_save('signo_carac_frase',$post_id);
-		//Como es
-		basic_input_text_meta_save('signo_comoes_naturaleza',$post_id);
-		basic_input_text_meta_save('signo_comoes_caracteriza',$post_id);
-		basic_input_text_meta_save('signo_comoes_feliz',$post_id);
-		basic_input_text_meta_save('signo_comoes_miedo',$post_id);
-		basic_input_text_meta_save('signo_comoes_ansiedad',$post_id);
-		basic_input_text_meta_save('signo_comoes_motivacion',$post_id);
-		//Lo mejor y lo peor
-		basic_input_text_meta_save('signo_lomejor_para',$post_id);
-		basic_input_text_meta_save('signo_lomejor_puede',$post_id);
-		basic_input_text_meta_save('signo_lomejor_no',$post_id);
-		basic_input_text_meta_save('signo_comoes_peor',$post_id);
-		//Compatibilidad en el amor
-		basic_input_text_meta_save('signo_comp_amor_con',$post_id, true);
-		basic_input_text_meta_save('signo_comp_amor_no_con',$post_id, true);
-		basic_input_text_meta_save('signo_comp_amor_comoes',$post_id);
-		basic_input_text_meta_save('signo_comp_amor_tener',$post_id);
-		//Compatibilidad en el trabajo y los negocios
-		basic_input_text_meta_save('signo_comp_trabajo_con',$post_id, true);
-		basic_input_text_meta_save('signo_comp_trabajo_no_con',$post_id, true);
-		basic_input_text_meta_save('signo_comp_trabajo_comoes',$post_id);
-		basic_input_text_meta_save('signo_comp_trabajo_tener',$post_id);
-		//Compatibilidad en el amistad
-		basic_input_text_meta_save('signo_comp_amistad_con',$post_id, true);
-		basic_input_text_meta_save('signo_comp_amistad_no_con',$post_id, true);
-		basic_input_text_meta_save('signo_comp_amistad_selleva',$post_id);
-		basic_input_text_meta_save('signo_comp_amistad_nosoporta',$post_id);
-		basic_input_text_meta_save('signo_comp_amistad_comoes',$post_id);
-		basic_input_text_meta_save('signo_comp_amistad_tener',$post_id);
-        
+	if($post->post_type === "escuela"){
+        if($post->post_parent == 0){
+            //Ficha
+            basic_input_text_meta_save('escuela_ficha_pub_priv',$post_id);
+            basic_input_text_meta_save('escuela_ficha_costo',$post_id);
+            basic_input_text_meta_save('escuela_ficha_nivel',$post_id,true);
+            basic_input_text_meta_save('escuela_ficha_horarios',$post_id,true);
+            basic_input_text_meta_save('escuela_ficha_horario',$post_id);
+            basic_input_text_meta_save('escuela_ficha_becas',$post_id);
+            basic_input_text_meta_save('escuela_ficha_bilingue',$post_id);
+            basic_input_text_meta_save('escuela_ficha_idiomas',$post_id,true);
+            basic_input_text_meta_save('escuela_ficha_metodo',$post_id);
+            basic_input_text_meta_save('escuela_ficha_ranking_puesto',$post_id);
+            basic_input_text_meta_save('escuela_ficha_ranking_nombre',$post_id);
+            basic_input_text_meta_save('escuela_ficha_ranking_enlace',$post_id);
+            //Datos adicionales
+            basic_input_text_meta_save('escuela_datos_alumnos',$post_id);
+            basic_input_text_meta_save('escuela_datos_alumnos_especiales',$post_id);
+            basic_input_text_meta_save('escuela_datos_religiosa',$post_id);
+            basic_input_text_meta_save('escuela_datos_religiosa_orden',$post_id);
+            basic_input_text_meta_save('escuela_datos_horario_extendido',$post_id);
+            basic_input_text_meta_save('escuela_datos_transporte_escolar',$post_id);
+            basic_input_text_meta_save('escuela_datos_cafeteria',$post_id);
+            basic_input_text_meta_save('escuela_datos_talleres',$post_id);
+            basic_input_text_meta_save('escuela_datos_instalaciones',$post_id);
+            basic_input_text_meta_save('escuela_datos_no_planteles',$post_id);
+            basic_input_text_meta_save('escuela_datos_seguridad',$post_id);
+            //Contacto
+            basic_input_text_meta_save('escuela_contacto_direccion',$post_id);
+            basic_input_text_meta_save('escuela_contacto_web',$post_id);
+            basic_input_text_meta_save('escuela_contacto_telefono',$post_id);
+            basic_input_text_meta_save('escuela_contacto_facebook',$post_id);
+            //Galeria
+            for($i=1;$i<=5;$i++){
+               image_meta_save('escuela_galeria'.$i,'escuela_galeria'.$i.'_file',$post->ID); 
+            }          
+        }else{
+            //Datos adicionales
+            basic_input_text_meta_save('nivel_datos_edades',$post_id);
+            basic_input_text_meta_save('nivel_datos_alumnos',$post_id);
+            basic_input_text_meta_save('nivel_datos_alumnos_especiales',$post_id);
+            basic_input_text_meta_save('nivel_datos_horario_clase',$post_id);
+            basic_input_text_meta_save('nivel_datos_horario_extendido',$post_id);
+            basic_input_text_meta_save('nivel_datos_transporte_escolar',$post_id);
+            basic_input_text_meta_save('nivel_datos_cafeteria',$post_id);
+            basic_input_text_meta_save('nivel_datos_talleres',$post_id);
+            basic_input_text_meta_save('nivel_datos_instalaciones',$post_id);    
+            basic_input_text_meta_save('nivel_datos_seguridad',$post_id); 
+            //Costos y Colegiaturas
+            basic_input_text_meta_save('nivel_costos_inscripcion',$post_id);
+            basic_input_text_meta_save('nivel_costos_colegiatura',$post_id);
+            basic_input_text_meta_save('nivel_costos_materiales',$post_id);
+            basic_input_text_meta_save('nivel_costos_uniformes',$post_id);
+            basic_input_text_meta_save('nivel_costos_alimentos',$post_id);
+            basic_input_text_meta_save('nivel_costos_seguros',$post_id);
+            basic_input_text_meta_save('nivel_costos_anual',$post_id);
+            basic_input_text_meta_save('nivel_costos_becas_desde',$post_id);
+            basic_input_text_meta_save('nivel_costos_becas_hasta',$post_id);
+            basic_input_text_meta_save('nivel_costos_considera',$post_id);
+        }
 
-	}else if($post->post_type === "horoscopos"){
-        basic_input_text_meta_save('horoscopo_ficha_signo',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_periodo',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_amor',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_dinero',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_salud',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_luna_nueva',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_luna_llena',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_num_suerte',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_dia_semana',$post_id);
-        basic_input_text_meta_save('horoscopo_ficha_texto',$post_id);
-        basic_input_text_meta_save('horoscopo_intro',$post_id);
-    }
+        
+	}
 
 }
 add_action( 'save_post', 'save_postdata' );

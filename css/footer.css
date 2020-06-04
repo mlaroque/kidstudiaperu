@@ -16,11 +16,11 @@ footer li {
 	list-style-type: none;
 	margin-bottom: 25px;
  }
-footer li a {
+footer li a, footer li a:visited {
 	color: #333030; 
 }
-footer li a:hover {  
-	color: #737070; 
+footer li a:hover, footer li a:focus {  
+	color: #ed6a4b; 
 	text-decoration: none; 
 }
 footer hr { 
@@ -102,7 +102,7 @@ footer hr {
 .footSx li a:focus,
 .footDx li a:hover,
 .footDx li a:focus {
-	color: #d38fd2;
+	color: #ed6a4b;
 	text-decoration: none;
 	}
 
@@ -145,7 +145,7 @@ footer hr {
 }
 .footHori { 
 	background: #f3f3f3; 
-	margin: 50px 0 30px 0; 
+	margin: 30px 0; 
 }
 .footHori a, .footHori a:visited { 
 	color: #707070;
@@ -166,7 +166,7 @@ footer hr {
 
 .footHori a:hover,
 .footHori a:focus { 
-	color: #d38fd2; 
+	color: #ed6a4b; 
 	}
 .footHori li { 
 	margin:5px; 

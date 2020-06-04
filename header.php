@@ -14,22 +14,34 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<meta name="description" content="<?php bloginfo('description'); ?>" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/grid.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/footer.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/elements.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/indice.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/signo.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/escuela.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/fuentes.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/alerts.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/horoscopos.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/widgets.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/comments.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/galeria.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/niveles.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact-form.css">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PKGJVTM');</script>
+<!-- End Google Tag Manager -->
 <?php wp_head(); ?>
 <body <?php body_class(); ?>>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKGJVTM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 	 
 
