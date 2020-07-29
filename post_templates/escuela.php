@@ -21,7 +21,9 @@
 	<div class="row">
 		<?php get_template_part("post_templates/escuela/ficha");?>
 
-		<?php get_template_part("post_templates/widgets/indice");?>			
+		<div class="col-12 col-sm-6 col-md-8 col-lg-8">
+			<?php get_template_part("post_templates/widgets/indice");?>		
+		</div>	
 	 </div>
 </div>
 

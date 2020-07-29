@@ -156,6 +156,19 @@ function create_post_type() {
         'taxonomies' => array( 'category', 'post_tag' ),   
         'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
         )  
+    ); 
+    register_post_type( 'guia',  
+        array(  
+            'labels' => array(  
+                'name' => __( 'Guias' ),  
+                'singular_name' => __( 'Guias' )  
+            ),  
+        'public' => true,  
+        'menu_position' => 4,  
+        'hierarchical' => true,  
+        'taxonomies' => array( 'category', 'post_tag' ),   
+        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
+        )  
     );
 
 }

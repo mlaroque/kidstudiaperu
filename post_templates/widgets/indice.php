@@ -1,5 +1,4 @@
 <?php global $purified_content; global $post;?>
-<div class="col-12 col-sm-6 col-md-8 col-lg-8">
 	<div class="indice-A">
 		<p><b>Indíce</b></p>
 			 <ol class="list-group list-group-indice-A">
@@ -12,11 +11,13 @@
 			?>
 				<li class="list-group-item"><a href="#<?php echo $id_text; ?>"><?php echo $match; ?></a></li>
 			<?php endforeach; ?>
+			<?php if($post->post_type == "escuela"): ?>
 				<li class="list-group-item"><a href="#contacto">Contacto</a></li>
+			<?php endif;?>
+
 			</ol>
    	</div>
-</div>
-<?php 
+ <?php 
 
 		$purified_content = preg_replace_callback("/<h2(.*?)>(.*?)(?=<\/h2>)/s","replace_with_ids", $purified_content);
 
