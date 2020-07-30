@@ -32,10 +32,10 @@
 						<td class="scp"><img data-src="https://kidstudia.com/wp-content/themes/LCtheme2020/images/scp-discapacidad.svg" class="lazy-img"/></td>
 						<td><p>Alumnos con Discapacidad <small>/</small> Educación Especial:</p></td>
 						<td class="scpYesNo">
-							<?php if(get_post_meta( $post->ID, 'escuela_datos_alumnos_especiales', true ) === "Si"):?>
-								<img src="<?php bloginfo('template_url'); ?>/images/si.svg" class="lazy-img"/>
+							<?php if(get_post_meta( $post->ID, 'escuela_datos_alumnos_especiales', true )):?>
+								<img data-src="<?php bloginfo('template_url'); ?>/images/si.svg" class="lazy-img"/>
 							<?php else: ?>
-								<img src="<?php bloginfo('template_url'); ?>/images/no.svg" class="lazy-img" />
+								<img data-src="<?php bloginfo('template_url'); ?>/images/no.svg" class="lazy-img" />
 							<?php endif;?>
 						</td>
 					</tr>
@@ -47,10 +47,10 @@
 						<td class="scp"><img data-src="https://kidstudia.com/wp-content/themes/LCtheme2020/images/scp-religion.svg" class="lazy-img"/></td>
 						<td><p>Religiosa  de orden: <b class="azul"><?php echo get_post_meta( $post->ID, 'escuela_datos_religiosa_orden', true ); ?></b></p></td>
 						<td class="scpYesNo">
-							<?php if(get_post_meta( $post->ID, 'escuela_datos_religiosa', true ) === "Si"):?>
-								<img src="<?php bloginfo('template_url'); ?>/images/si.svg" class="lazy-img"/>
+							<?php if(get_post_meta( $post->ID, 'escuela_datos_religiosa', true )):?>
+								<img data-src="<?php bloginfo('template_url'); ?>/images/si.svg" data-x="si" class="lazy-img"/>
 							<?php else: ?>
-								<img src="<?php bloginfo('template_url'); ?>/images/no.svg" class="lazy-img"/>
+								<img data-src="<?php bloginfo('template_url'); ?>/images/no.svg" data-x="no" class="lazy-img"/>
 							<?php endif;?>
 						</td>
 					</tr>
