@@ -84,6 +84,8 @@
 	</div>
 </div>
 
+<?php get_template_part("post_templates/widgets/post_type_relacionados");?>			
+
 <?php comments_template("/comments.php");?>
 
 </div>

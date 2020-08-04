@@ -6,9 +6,11 @@
 
 	function replace_with_ids($m) {
 
-			$id_text_tmp =	preg_replace("/<br\W*?\/>/", "\n", $m[2]);
-			$id_text_tmp =	preg_replace( "/\r|\n/", "", $id_text_tmp );
-			$id_text = strtolower(urlencode($id_text_tmp));
+      $id_text_tmp =	preg_replace("/<br\W*?\/>/", "\n", $m[2]);
+      $id_text_tmp =	preg_replace( "/\r|\n/", "", $id_text_tmp );
+      $id_text = strtolower(urlencode($id_text_tmp));
+      $id_text = str_replace('%26%238211%3b', '', $id_text); // quitamos el guión - (en los casos donde si hay)
+      $id_text = str_replace('++', '+', $id_text); //quitamos el doble +
  				     
  			return "<h2 id='".$id_text."'>" . $id_text_tmp . "</h2>";
 	}

@@ -8,82 +8,103 @@
  * @package LCtheme2020
  */
 
-?><!DOCTYPE html>
+ global $post;
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/grid.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/footer.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/elements.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/indice.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/escuela.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/fuentes.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/alerts.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/widgets.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/comments.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/galeria.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/niveles.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact-form.css">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PKGJVTM');</script>
-<!-- End Google Tag Manager -->
-<?php wp_head(); ?>
-<body <?php body_class(); ?>>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKGJVTM"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-	 
+<head>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/grid.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/header.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/footer.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/elements.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/indice.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/escuela.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/fuentes.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/alerts.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/widgets.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/comments.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/galeria.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/niveles.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact-form.css">
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PKGJVTM');
+    </script>
+    <!-- End Google Tag Manager -->
+    <?php wp_head(); ?>
+
+<body <?php body_class(); ?>>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PKGJVTM" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+		<?php 
+			if($post->post_type == 'escuela'): 
+				get_template_part('post_templates/widgets/markups/school');
+			endif; 
+		?>
 
     <header>
-	<nav class="navbar navbar-expand-lg border-bottom shadow-sm">
-		<div class="container">
-			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<img class="logo" src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>" alt="<?php bloginfo( 'name' ); ?>" />
-			</a>
+        <nav class="navbar navbar-expand-lg border-bottom shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img class="logo" src="<?php echo get_template_directory_uri() . '/images/logo.svg'; ?>"
+                        alt="<?php bloginfo( 'name' ); ?>" />
+                </a>
 
-			<div class="navbar-toggler hamburger_wrapper">
-        		<div id="lc_hamburger" class="navbar-toggler" tabindex="1" role="button" onclick="hamburger_toggle();">
-        			<span></span>
-        			<span></span>
-        			<span></span>
-        		</div>
-    		</div>
+                <div class="navbar-toggler hamburger_wrapper">
+                    <div id="lc_hamburger" class="navbar-toggler" tabindex="1" role="button"
+                        onclick="hamburger_toggle();">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
 
-      <div class="openLg" id="lc_nav-menu">
-      	<?php wp_nav_menu(array(
+                <div class="openLg" id="lc_nav-menu">
+                    <?php wp_nav_menu(array(
 	                       'theme_location' => 'header',
 	                       'container' => false,
 	                       'walker' => new LCMN_Walker(),
 	                       'items_wrap' => '<ul id="%1$s" class="navbar-nav ml-auto">%3$s</ul>') )?>
-      </div>
-    </div>
-  </nav>
-</header>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<script type="text/javascript">
-	
-	function hamburger_toggle(){
-  		var element = document.getElementById("lc_hamburger");
- 		element.classList.toggle("close");
+    <script type="text/javascript">
+    function hamburger_toggle() {
+        var element = document.getElementById("lc_hamburger");
+        element.classList.toggle("close");
 
- 		var element = document.getElementById("lc_nav-menu");
- 		element.classList.toggle("now-active");
+        var element = document.getElementById("lc_nav-menu");
+        element.classList.toggle("now-active");
 
-	}
+    }
+    </script>
 
-</script>
-
-<button style="display: none" class="scroll-to-top">
-	<div class="btnUp"><img src="<?php echo get_template_directory_uri() . '/images/arrowTop.svg'; ?>" alt="TOP" /></div>
-</button>
+    <button style="display: none" class="scroll-to-top">
+        <div class="btnUp"><img src="<?php echo get_template_directory_uri() . '/images/arrowTop.svg'; ?>" alt="TOP" />
+        </div>
+    </button>

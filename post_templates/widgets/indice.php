@@ -5,8 +5,11 @@
 			<?php 
 				preg_match_all('/<h2(.*?)>(.*?)<\/h2/s', $post->post_content, $matches_global, PREG_PATTERN_ORDER); 
 				 foreach($matches_global[2] as $match):
+					
+					$aux_match = $match;
+					$aux_match = str_replace(' - ', ' ', $aux_match); // quitamos el guión (donde si lo hay)
+					$id_text = strtolower(urlencode($aux_match));
 
-				 	$id_text = strtolower(urlencode($match));
 
 			?>
 				<li class="list-group-item"><a href="#<?php echo $id_text; ?>"><?php echo $match; ?></a></li>
