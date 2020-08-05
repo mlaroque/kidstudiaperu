@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/niveles.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact-form.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/relacionados.css">
     <!-- Google Tag Manager -->
     <script>
     (function(w, d, s, l, i) {
