@@ -4,6 +4,8 @@
 <?php get_header(); ?>
 	<?php if($post->post_type === "escuela" && $post->post_parent > 0):?>
 		<?php get_template_part("post_templates/nivel");?>
+	<?php elseif($post->post_type === "guias"):?>
+		<?php get_template_part("post_templates/guias");?>
 	<?php else:?>
 		<?php get_template_part("post_templates/" . $post->post_type);?>
 	<?php endif;?>

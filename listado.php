@@ -23,6 +23,9 @@
 	if($post->ID == 91){
 		get_template_part("listados/escuelas");
 	}
+  elseif($post->ID == 1398){
+    get_template_part("listados/guias");
+  }
 
 ?>
  

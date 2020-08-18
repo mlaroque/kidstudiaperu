@@ -30,9 +30,13 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/comments.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/galeria.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/niveles.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/contact-form.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/relacionados.css">
+<?php if(is_front_page()):?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
+<?php elseif($post->ID === 1398):?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/listado-guias.css">
+<?php endif; ?>
     <!-- Google Tag Manager -->
     <script>
     (function(w, d, s, l, i) {
