@@ -82,7 +82,7 @@
 								</tr>
 								<tr class="azul text-left <?php if($listado_post):?>lm60px<?php endif;?>">
 									<td class="brdb td33" valign="top">
-										<b>Método:</b>
+										<b>Proyecto educativo:</b>
 									</td>
 									<td class="brdb" valign="top">
 										<?php echo get_post_meta( $current_post->ID, 'escuela_ficha_metodo', true );	?>
@@ -90,7 +90,7 @@
 								</tr>
 								<tr class="rojo text-left">
 									<td class="brdb td33" valign="top">
-										<b>Horarios:</b>
+										<b>Turnos:</b>
 									</td>
 									<td class="brdb" valign="top">
 										<?php echo str_replace(";",", ", get_post_meta( $current_post->ID, 'escuela_ficha_horarios', true ));	?> 
@@ -101,7 +101,7 @@
 										<b>Horario</b>
 									</td>
 									<td class="amarilloC">
-										<?php echo get_post_meta( $current_post->ID, 'escuela_ficha_horario', true );	?>				
+										<?php echo get_post_meta( $current_post->ID, 'escuela_datos_horario_extendido', true );	?>				
 									</td>
 								</tr>
 							</tbody>

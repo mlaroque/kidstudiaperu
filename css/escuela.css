@@ -10,7 +10,7 @@ h3 { font-family: 'Quicksand', sans-serif;  color:#2d93aa; }
 .listado-A .yesNo, .yesNo { width: 32px; }
 .stars img { width: 25px; }
 .listado-A table { border: none; }
-.listado-A td { padding: 4px 10px; }.quickinfo1Tit { padding: 0; color: #7c8791; font-size: 14px; letter-spacing: 2px; line-height: normal; margin: 0 auto 0 auto; }
+.listado-A td { padding: 4px 10px; }.quickinfo1Tit { padding: 0; color: #7c8791; font-size: 13px; letter-spacing: 2px; line-height: normal; margin: 0 auto 0 auto; }
 
 .w { font-size: 40px; }
 .brdr { border-right: 1px dashed #ddd; }

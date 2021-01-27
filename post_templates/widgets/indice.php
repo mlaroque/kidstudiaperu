@@ -10,11 +10,16 @@
 					$aux_match = str_replace(' - ', ' ', $aux_match); // quitamos el guión (donde si lo hay)
 					$id_text = strtolower(urlencode($aux_match));
 
-
+					if(strpos($match, 'Cómo se enseña') !== false):
 			?>
+						<li class="list-group-item"><a href="#costos">Costos y Pensiones</a></li>
+			<?php
+					endif
+			?>
+			
 				<li class="list-group-item"><a href="#<?php echo $id_text; ?>"><?php echo $match; ?></a></li>
 			<?php endforeach; ?>
-			<?php if($post->post_type == "escuela"): ?>
+			<?php if($post->post_type == "colegio"): ?>
 				<li class="list-group-item"><a href="#contacto">Contacto</a></li>
 			<?php endif;?>
 

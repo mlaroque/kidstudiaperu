@@ -2,15 +2,15 @@
 <div class="scp-costos">
 <table>
 	<tr>
-		<td class="upper azulC"><b>Inscripción</b></td>
+		<td class="upper azulC"><b>Matrícula</b></td>
 		<td class="text-right"><?php echo escape_dollar(get_post_meta( $post->ID, 'nivel_costos_inscripcion', true ));	?> </td>
 	</tr>
 	<tr>
-		<td class="upper azulC"><b>Colegiatura Mensual</b></td>
+		<td class="upper azulC"><b>Pensión Mensual</b></td>
 		<td class="text-right"><?php echo escape_dollar(get_post_meta( $post->ID, 'nivel_costos_colegiatura', true ));	?> </td>
 	</tr>
 	<tr>
-		<td class="upper azulC"><b>Útiles y Materiales</b></td>
+		<td class="upper azulC"><b>Útiles y Materiales de clase</b></td>
 		<td class="text-right"><?php echo escape_dollar(get_post_meta( $post->ID, 'nivel_costos_materiales', true ));	?> </td>
 	</tr>
 	<tr>
@@ -26,7 +26,7 @@
 		<td class="text-right"><?php echo escape_dollar(get_post_meta( $post->ID, 'nivel_costos_seguros', true ));	?> </td>
 	</tr>
 	<tr>
-		<td class="upper azulC"><b>Costo Anual de Escuela</b></td>
+		<td class="upper azulC"><b>Costo Anual de Colegio</b></td>
 		<td class="text-right"><?php echo escape_dollar(get_post_meta( $post->ID, 'nivel_costos_anual', true ));	?> </td>
 	</tr>
 	<tr>

@@ -144,11 +144,11 @@ add_action( 'widgets_init', 'lacomuna_theme_widgets_init' );
 add_action( 'init', 'create_post_type' );
 
 function create_post_type() {  
-    register_post_type( 'escuela',  
+    register_post_type( 'colegio',  
         array(  
             'labels' => array(  
-                'name' => __( 'Escuelas' ),  
-                'singular_name' => __( 'Escuela' )  
+                'name' => __( 'Colegios' ),  
+                'singular_name' => __( 'Colegio' )  
             ),  
         'public' => true,  
         'menu_position' => 4,  
@@ -157,19 +157,6 @@ function create_post_type() {
         'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
         )  
     ); 
-    register_post_type( 'guia',  
-        array(  
-            'labels' => array(  
-                'name' => __( 'Guias' ),  
-                'singular_name' => __( 'Guias' )  
-            ),  
-        'public' => true,  
-        'menu_position' => 4,  
-        'hierarchical' => true,  
-        'taxonomies' => array( 'category', 'post_tag' ),   
-        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
-        )  
-    );
 
 }
 

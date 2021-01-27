@@ -38,7 +38,7 @@
     </div>
     <div class="col-12 col-sm-12">
       <div class="form-group cf_captcha text-center">
-          <div class="g-recaptcha" data-sitekey="6Le5Z_cUAAAAAMN6Lo8xvx66-SKthstCbSjlfIpQ"></div>
+          <div class="g-recaptcha" data-sitekey="6LdGI9gZAAAAAF4tkWG8D8hUH4TL5Eq4wjm4UpL1"></div>
       </div>
     </div>
     <div class="col-12 col-sm-12">

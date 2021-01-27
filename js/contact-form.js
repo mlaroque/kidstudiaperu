@@ -4,7 +4,7 @@ contact_form_elem.addEventListener('submit', submitForm);
 
 function submitForm(e){
 
-	var formInputs = contact_form_elem.querySelectorAll("input,select");
+	var formInputs = contact_form_elem.querySelectorAll("input,select,textarea");
 	var httpRequest = new XMLHttpRequest();
     var formData = new FormData();
 

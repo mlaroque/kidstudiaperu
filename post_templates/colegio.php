@@ -19,7 +19,7 @@
  
 <div class="container">
 	<div class="row">
-		<?php get_template_part("post_templates/escuela/ficha");?>
+		<?php get_template_part("post_templates/colegio/ficha");?>
 
 		<div class="col-12 col-sm-6 col-md-8 col-lg-8">
 			<?php get_template_part("post_templates/widgets/indice");?>		
@@ -27,7 +27,7 @@
 	 </div>
 </div>
 
-<?php get_template_part("post_templates/escuela/datos_adicionales");?>
+<?php get_template_part("post_templates/colegio/datos_adicionales");?>
 
 <div class="container">
 	<div class="row my-40">
@@ -39,6 +39,14 @@
 			$niveles = ob_get_clean();
 
 			$purified_content = preg_replace('/<h2(.*)>(.*?)iveles educativos(.*)<\/h2>/','<h2$1>$2iveles educativos$3</h2>'.$niveles,$purified_content);
+
+			if($post->post_parent == 0 && is_user_logged_in()){
+				ob_start();
+				get_template_part('post_templates/colegio/costos-por-niveles');
+				$h2_costos = ob_get_clean();
+				$purified_content = preg_replace('/<h2(.*)>(.*?)Cómo se enseña en(.*)<\/h2>/', $h2_costos.'$0', $purified_content);
+			
+			}
 
 			echo $purified_content; 
 
@@ -63,7 +71,7 @@
 		</div>
 	</div>
 </div>-->
-<?php get_template_part("post_templates/escuela/contacto");?>
+<?php get_template_part("post_templates/nivel/contacto");?>
 
 
 <div class="container">
@@ -91,6 +99,6 @@
 </div>
 
 
-<?php get_template_part("post_templates/escuela/escuela-municipio");?>			
+<?php get_template_part("post_templates/nivel/escuela-municipio");?>			
 
 		 

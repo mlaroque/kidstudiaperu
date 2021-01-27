@@ -20,8 +20,8 @@
 
 <?php
 
-	if($post->ID == 91){
-		get_template_part("listados/escuelas");
+	if($post->ID == 110){
+		get_template_part("listados/colegio");
 	}
   elseif($post->ID == 1398){
     get_template_part("listados/guias");

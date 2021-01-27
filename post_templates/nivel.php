@@ -17,7 +17,7 @@
  
 <div class="container">
 	<div class="row">
-		<?php get_template_part("post_templates/escuela/ficha");?>
+		<?php get_template_part("post_templates/colegio/ficha");?>
 
 		<div class="col-12 col-sm-6 col-md-8 col-lg-8">
 			<?php get_template_part("post_templates/widgets/indice");?>	
@@ -52,7 +52,7 @@
 	</div>
 </div>
 
-<?php get_template_part("post_templates/escuela/contacto");?>
+<?php get_template_part("post_templates/colegio/contacto");?>
 
 <div class="container">
 	<div class="row">

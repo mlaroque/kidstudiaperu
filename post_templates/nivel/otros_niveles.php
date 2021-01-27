@@ -7,10 +7,12 @@
 	}
 
 	$args = array(
-		'post_type' => 'escuela',
+		'post_type' => 'colegio',
 		'post_per_page' => -1,
 		'post_parent' => $post_parent,
-		'post__not_in' => array($post->ID)
+		'post__not_in' => array($post->ID),
+		'orderby' => 'menu_order',
+		'order' => 'ASC'
 		);
 
 	$niveles = get_posts($args);

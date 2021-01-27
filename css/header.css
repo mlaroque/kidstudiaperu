@@ -126,7 +126,7 @@ header {
     position: absolute;
     height: 4px;
     width: 100%;
-    background: violet;
+    background: #abcb53;
     border-radius: 4px;
     opacity: 1;
     left: 0;
@@ -151,7 +151,7 @@ header {
 
 #lc_hamburger.close span:nth-child(1) {
     transform: rotate(45deg);
-    background: purple
+    background: #feca01
 }
 
 #lc_hamburger.close span:nth-child(2) {
@@ -162,7 +162,7 @@ header {
 
 #lc_hamburger.close span:nth-child(3) {
     transform: rotate(-45deg);
-    background: purple
+    background: #feca01
 }
 
 #lc_nav-menu {
