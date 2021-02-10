@@ -29,5 +29,21 @@ function contact_form ($content){
 	return $content;
 }
 
+add_shortcode('relacionados','relacionados');
 
+function relacionados( $atts){
+	global $post;
+
+	$a = shortcode_atts( array(
+   			'post_type' => $post->post_type
+		), $atts );
+
+	$GLOBALS['posttype'] = $a['post_type'];
+
+ 	ob_start();
+	 get_template_part("inc/template-blogs-relacionados");
+	$content .= ob_get_clean();
+
+	return $content;
+}
 ?>

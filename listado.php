@@ -19,11 +19,10 @@
 </div>
 
 <?php
-
 	if($post->ID == 110){
 		get_template_part("listados/colegio");
 	}
-  elseif($post->ID == 1398){
+  elseif($post->ID == 1972){
     get_template_part("listados/guias");
   }
 
