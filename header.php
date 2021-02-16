@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
 <?php elseif($post->ID === 1398):?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/listado-guias.css">
+<?php elseif($post->post_type == "guias"): ?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/guias.css">
 <?php endif; ?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/form.css">
 

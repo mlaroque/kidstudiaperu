@@ -19,7 +19,7 @@
 
     if($posttype == "guia"){
         $title = "Te podría interesar";
-        $class = "relacGuias";
+        $class = "RguiasBox";
     } else {
         $title = "Más $post_type_label";
         $class = "relac-$posttype";
@@ -36,16 +36,16 @@
     <div class="row">
 
       <?php foreach( $blogs as $blog): ?>
-        <div class="col-sm-6 col-md-3">
-          <div class="card shadow-sm mb-3 <?php echo $class; ?>">
-            <div class="card-img">
+        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
+          <div class="<?php echo $class; ?>">
+            <a href="<?php echo get_permalink($blog->ID); ?>">
+            <div class="RguiasImg">
               <img class="js-lazy-image card-img-top" alt="<?php echo $blog->post_title; ?>" src="<?php echo get_the_post_thumbnail_url($blog->ID, 'medium'); ?>">
             </div>
-                <div class="card-body">
-                  <p class="card-title mb-2 lhn"><b>
-                    <a class="stretched-link" href="<?php echo get_permalink($blog->ID); ?>"><?php echo $blog->post_title; ?> </a>
-                  </b></p>
-                </div>        
+                <div class="RguiasTit">
+                    <h2><?php echo $blog->post_title; ?></h2>
+                </div>  
+                </a>      
               </div>
           </div>
 
