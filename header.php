@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/relacionados.css">
 <?php if(is_front_page()):?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/portada.css">
-<?php elseif($post->ID === 1398):?>
+<?php elseif($post->ID === 1972):?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/listado-guias.css">
 <?php elseif($post->post_type == "guias"): ?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/guias.css">

@@ -42,7 +42,7 @@
 		</div>
 	</div>
 </div>
-<?php echo do_shortcode('[relacionados post_type="guia"]'); ?>
+<?php echo do_shortcode('[relacionados post_type="guias"]'); ?>
 <?php comments_template("/comments.php");?>
  
 </div>

@@ -41,7 +41,7 @@ function relacionados( $atts){
 	$GLOBALS['posttype'] = $a['post_type'];
 
  	ob_start();
-	 get_template_part("inc/template-blogs-relacionados");
+	 get_template_part("post_templates/widgets/template-blogs-relacionados");
 	$content .= ob_get_clean();
 
 	return $content;

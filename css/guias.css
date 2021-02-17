@@ -1,7 +1,59 @@
 
-.RguiasBox { margin-bottom: 30px; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); } 
-.RguiasBox:hover { background: #e5f4f8; }
-.RguiasImg { background: #fff; height: 170px; overflow: hidden; width: 100%; }
-.RguiasImg img { max-height: 170px; height: 170px; width: auto; margin: 0; }
-.RguiasTit { width: 93%; margin:0 auto; display: inline-block; height: 73px; overflow: hidden; }
-.RguiasTit h2 { font-size: 16px; text-align: left; line-height: 20px; color: rgba(7,23,29,0.8); }
+  .lc_relac-cont {
+    margin-bottom: 60px;
+}
+
+.lc_relac-cont h2 { 
+  color: #5dc3da;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 30px;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-top: 1px dashed #5dc3da;
+  padding-top: 30px;
+}
+.lc_relac-title p:hover, .lc_relac-box:hover p {
+    color: #5dc3da;
+}
+.lc_relac-box { 
+    margin-bottom: 1.5em; 
+    position: relative; 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+} 
+
+.lc_relac-img { 
+    height: 144px; 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 4px 4px 0; 
+}
+.lc_relac-img > a > img { 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+.lc_relac-body {
+     padding: 0.8em;
+}
+.lc_relac a{
+    text-decoration: none;
+    color: #07171d;
+}
+.lc_relac-title {
+    margin: 0;
+    height: auto;
+    word-break: break-word;
+    overflow: hidden;
+    height: 62px;
+}
+
+.lc_relac-title p {
+    word-break: break-word; 
+    margin:0;
+    font-size: 18px;
+    line-height: 1.1em; 
+    font-weight: normal;
+    color: #646a82;
+}

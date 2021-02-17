@@ -154,10 +154,10 @@ function create_post_type() {
         'menu_position' => 4,  
         'hierarchical' => true,  
         'taxonomies' => array( 'category', 'post_tag' ),   
-        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
+        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes','revisions')
         )  
     );
-    register_post_type( 'guia',  
+    register_post_type( 'guias',  
         array(  
             'labels' => array(  
                 'name' => __( 'Guias' ),  
@@ -167,7 +167,7 @@ function create_post_type() {
         'menu_position' => 5,  
         'hierarchical' => true,  
         'taxonomies' => array( 'category', 'post_tag' ),   
-        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes')
+        'supports' => array( 'title', 'editor', 'author', 'comments', 'thumbnail', 'excerpt', 'page-attributes','revisions')
         )  
     );  
 

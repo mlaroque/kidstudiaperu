@@ -4,9 +4,9 @@
   <div class="row">
   <?php
     $args = array(
-        'post_type' => 'guia',
+        'post_type' => 'guias',
         'posts_per_page' => -1,
-        'post_status'=>'draft',//cambiar a PUBLISH
+        'post_status'=>'PUBLISH', 
         'orderby' => 'title',
         'order' => 'ASC'
     );

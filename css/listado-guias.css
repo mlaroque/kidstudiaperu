@@ -61,6 +61,7 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
 .lc_card-title {
-    height: 4em;
+    height: 4.5em;
+    overflow: hidden;
 }
 }
