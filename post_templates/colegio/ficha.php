@@ -16,7 +16,7 @@
 			<div class="listado-A shadow rounded-lg border">
 				<?php if($listado_post):?><a class="tdn" href="<?php echo get_permalink($current_post->ID);?>"><?php endif;?>
 				<div class="listado-A-logo">
-					<img src="<?php echo get_the_post_thumbnail_url($current_post->ID);?>">
+					<img data-src="<?php echo get_the_post_thumbnail_url($current_post->ID);?>" class="lazy-img">
 				</div>
 				<!--<div class="stars text-center">
 					<p class="marPad0">Puntuación <b class="puntuacion amarillo">3.6</b>/5 - <a class="amarillo" href="#">Opinar</a></p>
@@ -41,18 +41,18 @@
 										<span class="quickinfo1Tit">Becas/Ayudas</span>
 										<br>
 										<?php if(get_post_meta( $current_post->ID, 'escuela_ficha_becas', true ) === "Si"):?>
-											<img src="<?php bloginfo('template_url'); ?>/images/si.svg" class="yesNo" />
+											<img data-src="<?php bloginfo('template_url'); ?>/images/si.svg" class="yesNo lazy-img"  />
 										<?php else: ?>
-												<img src="<?php bloginfo('template_url'); ?>/images/no.svg" class="yesNo" />
+												<img data-src="<?php bloginfo('template_url'); ?>/images/no.svg" class="yesNo lazy-img" />
 										<?php endif;?>
 									</td>
 									<td class="text-center td33 brdr brdb" valign="top">
 										<span class="quickinfo1Tit">Bilingue</span>
 										<br>
 										<?php if(get_post_meta( $current_post->ID, 'escuela_ficha_bilingue', true ) === "Si"):?>
-											<img src="<?php bloginfo('template_url'); ?>/images/si.svg" class="yesNo" />
+											<img data-src="<?php bloginfo('template_url'); ?>/images/si.svg" class="yesNo lazy-img" />
 										<?php else: ?>
-											<img src="<?php bloginfo('template_url'); ?>/images/no.svg" class="yesNo" />
+											<img data-src="<?php bloginfo('template_url'); ?>/images/no.svg" class="yesNo lazy-img" />
 										<?php endif;?>
 									</td>
 								</tr>
@@ -67,11 +67,13 @@
 
 						<table class="w-100 text-left">
 							<tbody>
+							<?php if($listado_post!=true):?>
 								<tr class="BGverde">
 									<td colspan="2" class="text-center" valign="middle">
 										<p class="lhn marPad0 blanco">Puesto <b class="xl35 blanco"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_puesto', true );	?></b><!--<br/> Calificado por: <b><a class="blanco" href="<?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_enlace', true );	?>" target="_blank" rel="nofollow"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_nombre', true );	?></a></b>--></p>
 									</td>
 								</tr>
+							<?php endif; ?>
 									<tr class="verdeC text-left <?php if($listado_post):?>ln90px<?php endif;?>">
 									<td class="brdb td33" valign="top">
 										<b>Nivel Educativo:</b>
@@ -96,6 +98,7 @@
 										<?php echo str_replace(";",", ", get_post_meta( $current_post->ID, 'escuela_ficha_horarios', true ));	?> 
 									</td>
 								</tr>
+								<?php if($listado_post!=true):?>
 								<tr>
 									<td class="amarilloC">
 										<b>Horario</b>
@@ -104,6 +107,7 @@
 										<?php echo get_post_meta( $current_post->ID, 'escuela_datos_horario_extendido', true );	?>				
 									</td>
 								</tr>
+								<?php endif; ?>
 							</tbody>
 						</table>
 					</div>
