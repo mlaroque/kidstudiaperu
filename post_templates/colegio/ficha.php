@@ -67,13 +67,13 @@
 
 						<table class="w-100 text-left">
 							<tbody>
-							<?php if($listado_post!=true):?>
-								<tr class="BGverde">
+							
+								<!--<tr class="BGverde">
 									<td colspan="2" class="text-center" valign="middle">
-										<p class="lhn marPad0 blanco">Puesto <b class="xl35 blanco"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_puesto', true );	?></b><!--<br/> Calificado por: <b><a class="blanco" href="<?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_enlace', true );	?>" target="_blank" rel="nofollow"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_nombre', true );	?></a></b>--></p>
-									</td>
-								</tr>
-							<?php endif; ?>
+										<p class="lhn marPad0 blanco">Puesto <b class="xl35 blanco"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_puesto', true );	?>--></b><!--<br/> Calificado por: <b><a class="blanco" href="<?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_enlace', true );	?>" target="_blank" rel="nofollow"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_nombre', true );	?></a></b>--></p>
+									<!--</td>
+								</tr>-->
+							
 									<tr class="verdeC text-left <?php if($listado_post):?>ln90px<?php endif;?>">
 									<td class="brdb td33" valign="top">
 										<b>Nivel Educativo:</b>
