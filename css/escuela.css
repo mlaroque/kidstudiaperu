@@ -66,3 +66,21 @@ td.scpYesNo { width: 40px; }
 .col-6.quickinfoH { padding: 0 10px; }
 .ln90px { height: 90px; }
 .lm60px { height: 60px; }
+
+
+.ficha { border: 1px solid #feca01;  font-size: 0.9rem; margin-bottom: 30px; }
+.ficha h2 { font-size: 20px; }
+.ficha-logo { max-width: 200px; max-height: 85px; margin:0 auto; margin: 10px auto; }
+.ficha-logo img { max-height: 85px; max-width: 100%; width: auto; min-height: auto; }
+ .ficha table { border: none; }
+.ficha td { padding: 8px 10px; font-size: 15px; line-height: normal; color: #646a82; }
+.fichaTit {  color: #949ab2; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; line-height: normal; margin: 0 auto 0 auto; font-weight: 700; line-height: normal; }
+.ficha .stars img { width: 20px; }
+.ficha .yesNo, .yesNo { width: 25px; }
+.fichaBG { background: #f7f8fa; }
+.ficha .costo { color: #66cc00; font-size: 19px }
+.ficha .blanco { color: #fff; }
+
+.btn-pideinfo { background: #ed6a4b; font-size: 18px; margin: 0 auto; font-weight: 700; }
+.btn-pideinfo:hover { background: #dd5a3b; }
+
