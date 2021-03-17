@@ -3,7 +3,9 @@
 	$listado_post = null;
 	if($post->post_type === "colegio"){
     	$listado_post = get_post(110);
-  	}
+  	}else if($post->post_type === "guias"){
+		$listado_post = get_post(1972);
+	}
 ?>
 <ol class="breadcrumb">
 	<li><a href="https://kidstudia.pe/">Inicio</a></li>

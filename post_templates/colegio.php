@@ -76,16 +76,15 @@
                 //Me sirve para table X nivel 
                 function h3_costos_x_nivel($m)
                 {
-                    static $matchcount = 0;
-                    $matchcount++;
-                    if($matchcount==1){ //Depende del lugar h3
-                        $colegio_nivel = "cunas";    
-                    }else if($matchcount==2) {
-                        $colegio_nivel = "inicial";    
-                    }else if($matchcount==3){
-                        $colegio_nivel = "primaria";    
-                    }else if($matchcount==4){
-                        $colegio_nivel = "secundaria";    
+                    
+					if(strpos($m[0],"unas") !== false){
+                        $colegio_nivel = "cunas";
+                    }else if(strpos($m[0],"nicial") !== false){
+                        $colegio_nivel = "inicial";
+                    }else if(strpos($m[0],"rimaria") !== false){
+                        $colegio_nivel = "primaria";
+                    }else if(strpos($m[0],"ecundaria") !== false){
+                        $colegio_nivel = "secundaria";
                     }
 
                     ob_start();

@@ -151,14 +151,6 @@
 
                     <table class="w-100 text-left">
                         <tbody>
-
-                            <!--<tr class="BGverde">
-									<td colspan="2" class="text-center" valign="middle">
-										<p class="lhn marPad0 blanco">Puesto <b class="xl35 blanco"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_puesto', true );	?></b>
-                            <br/> Calificado por: <b><a class="blanco" href="<?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_enlace', true );	?>" target="_blank" rel="nofollow"><?php echo get_post_meta( $current_post->ID, 'escuela_ficha_ranking_nombre', true );	?></a></b></p>
-                            
-                            </td>
-								</tr>-->
                             <tr class="verdeC text-left">
                                 <td colspan="2" class="td33" valign="top">
                                     <b class="fichaTit">Nivel Educativo:</b><br/>
