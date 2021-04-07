@@ -1,0 +1,34 @@
+.btn-accordion, .btn-accordion:visited {
+    text-align: left;
+    width: 100%;
+    font-size: 18px;
+    background: #5dc3da;
+    border-radius: 0;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    margin: 1px 0px;
+    font-family: 'Quicksand';
+}
+.btn-accordion:hover, .btn-accordion:focus {
+    background: #3da3ba; 
+    color: #fff;
+}
+
+.accordion_content_style {
+    width: 100%;
+    padding: 25px;
+    background: #f7f8fa;
+    color: #3da3ba;
+}
+
+.plus { float: right; color: #fff; font-size: 26px; line-height: 1em; }
+
+
+.postToggle {
+    width: 100%;
+    float: left;
+    height: 10px;
+    margin: 20px auto 10px;
+}

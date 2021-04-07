@@ -38,6 +38,8 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/listado-guias.css">
 <?php elseif($post->post_type == "guias"): ?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/guias.css">
+<?php elseif($post->post_type == "colegio"): ?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/accordion.css">
 <?php endif; ?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/form.css">
 
