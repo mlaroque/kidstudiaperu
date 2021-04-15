@@ -1,7 +1,7 @@
 .galeria {width: 100%; display:inline-block;}
 .galeria ul { margin: 10px; padding: 0; text-align: center; }
-.galeria li {display: inline-block; width: 12%; text-align: center; background-position: center; margin: 0 5px;}
+.galeria li { display: inline-block; width: 100%; text-align: center; background-position: center; margin: 5px auto; box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); max-height: none; }
 .galeria li img {width: 100%}
 @media (min-width:482px){
-.galeria li {  width: 12%; margin: 10px; display: inline-block}
+.galeria li {  width: 30%; max-height: 190px; margin: 1%; display: inline-block; overflow: hidden; }
 }

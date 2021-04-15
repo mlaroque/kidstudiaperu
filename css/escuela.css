@@ -46,7 +46,7 @@ h3 { font-family: 'Quicksand', sans-serif;  color:#2d93aa; }
 .rojo { color: #ed6a4b; }
 .amarilloC { color: #ae7a00; }
 .verdeC { color: #6b8b13; }
- 
+ #contacto { margin-bottom: 30px; }
 .scp-contact { background-color: #aaca53; padding: 10px 20px;}
 .scp-contact h2 { margin: 0 auto 10px auto; padding: 0; color: #fff; }
 .scp-contact p { color: #fff; }
