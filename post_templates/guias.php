@@ -25,7 +25,7 @@
 		</div>	
 
 		<div class="col-12 col-sm-6 col-md-6 col-lg-6">
-			<img src="<?php echo get_the_post_thumbnail_url();?>" width="100%" alt="<?php echo $post->post_title; ?>">
+			<img class="lazy-img" data-src="<?php echo get_the_post_thumbnail_url();?>" width="100%" alt="<?php echo $post->post_title; ?>">
 		</div>
 
 	 </div>

@@ -39,7 +39,7 @@
         <div class="col-12 col-sm-3 col-md-3 col-lg-3">
           <div class="lc_relac-box">
             <div class="lc_relac-img">
-                <a href="<?php echo get_permalink($blog->ID); ?>"><img class="js-lazy-image" alt="<?php echo $blog->post_title; ?>" src="<?php echo get_the_post_thumbnail_url($blog->ID, 'medium'); ?>"></a>
+                <a href="<?php echo get_permalink($blog->ID); ?>"><img class="lazy-img" alt="<?php echo $blog->post_title; ?>" data-src="<?php echo get_the_post_thumbnail_url($blog->ID, 'medium'); ?>"></a>
             </div>
             <div class="lc_relac-body">
               <div class="lc_relac-title">

@@ -23,7 +23,7 @@
       <div class="lc_card shadow">
         <a href="<?php echo get_permalink($post_guia->ID); ?>" class="list-item-thumb">
           <div class="lc_card-img">
-            <img class="js-lazy-image card-img-top" alt="<?php echo $post_guia->post_title; ?>" src="<?php echo get_the_post_thumbnail_url($post_guia->ID, 'medium'); ?>">
+            <img class="lazy-img card-img-top" alt="<?php echo $post_guia->post_title; ?>" data-src="<?php echo get_the_post_thumbnail_url($post_guia->ID, 'medium'); ?>">
           </div>
           <div class="lc_card-body">
             <div class="lc_card-title">
