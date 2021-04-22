@@ -195,15 +195,19 @@ function basic_input_text_meta_save($input_name, $post_id, $is_array = false){
 
 function image_meta_save($input_name, $input_file_name, $post_id){
 
-	if ( isset( $_POST[$input_file_name.'_nonce'] ) && wp_verify_nonce( $_POST[$input_file_name.'_nonce'], $input_file_name ) && $_FILES[$input_file_name]['error'] != 4 && $_FILES[$input_file_name]['size'] != 0) {
-            // These files need to be included as dependencies when on the front end.
-            require_once( ABSPATH . 'wp-admin/includes/image.php' );
-            require_once( ABSPATH . 'wp-admin/includes/file.php' );
-            require_once( ABSPATH . 'wp-admin/includes/media.php' );
-    
-            $attachment_id = media_handle_upload( $input_file_name,0);
+    if ( isset( $_POST[$input_file_name.'_nonce'] ) && wp_verify_nonce( $_POST[$input_file_name.'_nonce'], $input_file_name ) && $_FILES[$input_file_name]['error'] != 4 && $_FILES[$input_file_name]['size'] != 0) {
+        // These files need to be included as dependencies when on the front end.
+        require_once( ABSPATH . 'wp-admin/includes/image.php' );
+        require_once( ABSPATH . 'wp-admin/includes/file.php' );
+        require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+        $attachment_id = media_handle_upload( $input_file_name,0);
+        if ( is_wp_error( $attachment_id ) ) {
+            echo "Error al subir la imagen " . $input_file_name;
+        }else{
             update_post_meta( $post_id,$input_name, $attachment_id);
-    
+        }
+
     }else if( array_key_exists($input_name, $_POST ) ) {
             update_post_meta( $post_id,$input_name, $_POST[$input_name]);
     }

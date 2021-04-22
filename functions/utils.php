@@ -1,5 +1,5 @@
 <?php
-	
+
 	function get_image_by_value($val,$extension){
 		return get_template_directory_uri() . "/images/" . $val . "." . $extension;
 	}
@@ -11,55 +11,66 @@
       $id_text = strtolower(urlencode($id_text_tmp));
       $id_text = str_replace('%26%238211%3b', '', $id_text); // quitamos el guión - (en los casos donde si hay)
       $id_text = str_replace('++', '+', $id_text); //quitamos el doble +
- 				     
+
  			return "<h2 id='".$id_text."'>" . $id_text_tmp . "</h2>";
 	}
 
 
 	class LCMN_Walker extends Walker_Nav_Menu {
-    private $curItem;
-	// Displays start of an element. E.g '<li> Item Name'
-    // @see Walker::start_el()
-    function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
-      $this->curItem = $item;
-    	$object = $item->object;
-    	$type = $item->type;
-    	$title = $item->title;
-    	$description = $item->description;
-    	$permalink = $item->url;
 
-      if($depth > 0){
-      		$output .= "<li class='hidden subtoggle-".$item->menu_item_parent." " .  implode(" ", $item->classes) . "'>";
-      }else{
-      		$output .= "<li class='" .  implode(" ", $item->classes) . "'>";
-      }
-        
-      //Add SPAN if no Permalink
-      if( $permalink && $permalink != '#' ) {
-      	$output .= '<a href="' . $permalink . '">';
-      } else {
-      	$output .= '<a onclick="menu_toggle('.$item->ID.');">';
-      }
-       
-      $output .= $title;
+		private $curItem;
 
-      if( $description != '' && $depth == 0 ) {
-      	$output .= '<small class="description">' . $description . '</small>';
-      }
+		// Displays start of an element. E.g '<li> Item Name'
+		// @see Walker::start_el()
+		function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
 
+			$this->curItem = $item;
+			$object = $item->object;
+			$type = $item->type;
+			$title = $item->title;
+			$description = $item->description;
+			$permalink = $item->url;
 
-      $output .= '</a>';
+			if ($depth > 0) {
 
-    }
+				$output .= "<li class='hidden subtoggle-" . $item->menu_item_parent . " " . implode(" ", $item->classes) . "'>";
+			}
 
-    function start_lvl(&$output, $item, $depth) {
-        $output .= '<ul id="sub-'.$this->curItem->ID.'" class="sub-menu">';
-    } 
+			else {
+
+				$output .= "<li class='" .  implode(" ", $item->classes) . "'>";
+			}
+
+			//Add SPAN if no Permalink
+			if ($permalink && $permalink != '#') {
+
+				$output .= '<a href="' . $permalink . '">';
+			}
+
+			else {
+
+				$output .= '<a onclick="menu_toggle(' . $item->ID . ');">';
+			}
+
+			$output .= $title;
+
+			if ($description != '' && $depth == 0) {
+
+				$output .= '<small class="description">' . $description . '</small>';
+			}
+
+			$output .= '</a>';
+		}
+
+		function start_lvl(&$output, $depth = 0, $args = NULL) {
+
+			$output .= '<ul id="sub-' . $this->curItem->ID . '" class="sub-menu sub-closed">';
+		}
 	}
 
 
 add_filter( 'wp_unique_post_slug', 'mg_unique_post_slug', 10, 6 );
- 
+
   /**
    * Allow numeric slug
    *
@@ -72,23 +83,23 @@ add_filter( 'wp_unique_post_slug', 'mg_unique_post_slug', 10, 6 );
    */
   function mg_unique_post_slug( $slug, $post_ID, $post_status, $post_type, $post_parent, $original_slug ) {
    global $wpdb;
-   
+
   // don't change non-numeric values
    if ( ! is_numeric( $original_slug ) || $slug === $original_slug ) {
    return $slug;
    }
-   
+
   // Was there any conflict or was a suffix added due to the preg_match() call in wp_unique_post_slug() ?
    $post_name_check = $wpdb->get_var( $wpdb->prepare(
    "SELECT post_name FROM $wpdb->posts WHERE post_name = %s AND post_type IN ( %s, 'attachment' ) AND ID != %d AND post_parent = %d   LIMIT 1",
    $original_slug, $post_type, $post_ID, $post_parent
    ) );
-   
+
   // There really is a conflict due to an existing page so keep the modified slug
    if ( $post_name_check ) {
    return $slug;
    }
-   
+
   // Return our numeric slug
    return $original_slug;
   }

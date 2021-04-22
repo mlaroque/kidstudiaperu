@@ -35,64 +35,64 @@
                                         <?php 
                                     switch ($review) {
                                         case 1:?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
                                     <?php break;
                                     case 2:?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
                                     <?php break;
                                     case 3:?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
                                     <?php break;
                                     case 4:?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
-                                            class="yesNo" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_off.svg"
+                                            class="yesNo lazy-img" />
                                     <?php break;
                                     default:?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
-                                            class="yesNo" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
+                                        <img data-src="<?php echo get_template_directory_uri(); ?>/images/star_on.svg"
+                                            class="yesNo lazy-img" />
                                     <?php break;
                                     }?>
 

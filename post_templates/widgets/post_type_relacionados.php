@@ -66,9 +66,9 @@ $posttype_obj = get_post_type_labels( get_post_type_object($post->post_type) );
 	                                            <span class="quickinfo1Tit">Becas/Ayudas</span>
 	                                            <br>
 	                                            <?php if(get_post_meta( $current_post->ID, 'escuela_ficha_becas', true ) === "Si"):?>
-	                                            <img src="<?php bloginfo('template_url'); ?>/images/si.svg" class="yesNo" />
+	                                            <img data-src="<?php bloginfo('template_url'); ?>/images/si.svg" class="yesNo lazy-img" />
 	                                            <?php else: ?>
-	                                            <img src="<?php bloginfo('template_url'); ?>/images/no.svg" class="yesNo" />
+	                                            <img data-src="<?php bloginfo('template_url'); ?>/images/no.svg" class="yesNo lazy-img" />
 	                                            <?php endif;?>
 	                                        </td>
 	                                        <!--<td class="text-center td33 brdr brdb" valign="top">

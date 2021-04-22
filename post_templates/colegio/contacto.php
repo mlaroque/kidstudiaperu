@@ -14,8 +14,8 @@
 				<p><b>Dirección:</b> <?php echo get_post_meta( $current_post->ID, 'escuela_contacto_direccion', true );	?></p>
 				<p><b>Teléfono:</b> <?php echo get_post_meta( $current_post->ID, 'escuela_contacto_telefono', true );	?></p>
 				<p class="text-center">
-					<a target="_blank" rel="noopener noreferrer nofollow" href="<?php echo get_post_meta( $current_post->ID, 'escuela_contacto_web', true );	?>"><img src="<?php bloginfo('template_url'); ?>/images/chrome.svg" /></a>
-					<a target="_blank" rel="noopener noreferrer nofollow" href="<?php echo get_post_meta( $current_post->ID, 'escuela_contacto_facebook', true );	?>"><img src="<?php bloginfo('template_url'); ?>/images/facebook.svg" /></a>
+					<a target="_blank" rel="noopener noreferrer nofollow" href="<?php echo get_post_meta( $current_post->ID, 'escuela_contacto_web', true );	?>"><img class="lazy-img" data-src="<?php bloginfo('template_url'); ?>/images/chrome.svg" /></a>
+					<a target="_blank" rel="noopener noreferrer nofollow" href="<?php echo get_post_meta( $current_post->ID, 'escuela_contacto_facebook', true );	?>"><img class="lazy-img" data-src="<?php bloginfo('template_url'); ?>/images/facebook.svg" /></a>
 				</p>
 			</div>
 		</div>
