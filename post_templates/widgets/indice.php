@@ -12,15 +12,15 @@
 
 					if(strpos($match, 'Cómo se enseña') !== false):
 			?>
-						<li class="list-group-item"><a href="#costos">Costos y Pensiones</a></li>
+						<li class="list-group-item"><a class="toc" href="#costos">Costos y Pensiones</a></li>
 			<?php
 					endif
 			?>
 			
-				<li class="list-group-item"><a href="#<?php echo $id_text; ?>"><?php echo $match; ?></a></li>
+				<li class="list-group-item"><a class="toc" href="#<?php echo $id_text; ?>"><?php echo $match; ?></a></li>
 			<?php endforeach; ?>
 			<?php if($post->post_type == "colegio"): ?>
-				<li class="list-group-item"><a href="#contacto">Contacto</a></li>
+				<li class="list-group-item"><a class="toc" href="#contacto">Contacto</a></li>
 			<?php endif;?>
 
 			</ol>
