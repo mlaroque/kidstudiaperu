@@ -1,40 +1,50 @@
 <?php global $post; global $purified_content; 
 	$new_template = get_post_meta( $post->ID,"escuela_new_template", true );
 ?>
-
 <div class="container">
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-			<?php get_template_part("post_templates/widgets/breadcrumbs"); ?>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <?php get_template_part("post_templates/widgets/breadcrumbs"); ?>
+        </div>
+    </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1><?php echo $post->post_title; ?></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="lc_ads">
+            <div id="ads_abajo_h1" class="lazy-ads "></div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <?php get_template_part("post_templates/colegio/ficha");?>
 
-
+        <div class="col-12 col-sm-6 col-md-8 col-lg-8">
+            <?php get_template_part("post_templates/widgets/indice");?>
+        </div>
+    </div>
+</div>
+<?php get_template_part("post_templates/colegio/datos_adicionales");
+	// Si es nuevo template banner responsive sino ln-Article
+ if($new_template=="Si"){ $ads_quick_info = "NT_quick"; }else{ $ads_quick_info = "quick"; } ?>
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<h1><?php echo $post->post_title; ?></h1>
+			<div class="lc_ads">
+				<div id="ads_abajo_<?php echo $ads_quick_info; ?>" class="lazy-ads "></div>
+			</div>
 		</div>
 	</div>
 </div>
- 
 <div class="container">
-	<div class="row">
-		<?php get_template_part("post_templates/colegio/ficha");?>
-
-		<div class="col-12 col-sm-6 col-md-8 col-lg-8">
-			<?php get_template_part("post_templates/widgets/indice");?>		
-		</div>	
-	 </div>
-</div>
-
-<?php get_template_part("post_templates/colegio/datos_adicionales");?>
-
-<div class="container">
-	<div class="row my-40">
-		<div class="col-12">
-			<?php 
+    <div class="row my-40">
+        <div class="col-12">
+            <?php 
 			ob_start();
 			get_template_part("post_templates/nivel/otros_niveles");
 			$niveles = ob_get_clean();
@@ -96,12 +106,56 @@
                 $purified_content = preg_replace_callback('/<h3(.*)>(.*?)y Pensiones de(.*)<\/h3>/','h3_costos_x_nivel', $purified_content);   
             }
 
+
+			function insert_ads($m) {
+				static $matchcount = 0;
+
+				$matchcount++;
+
+					if($matchcount == 3 and $new_template!='Si'){
+						ob_start();?>
+						<div class="lc_ads">
+							<div id="ads-third-h2" class="lazy-ads "></div>
+						</div>
+						<?php $ad .= ob_get_clean();
+						return $m[0] . $ad;// ;
+					}else if($matchcount == 6 and $new_template!='Si'){
+						ob_start();?>
+						<div class="lc_ads">
+							<div id="ads-sixth-h2" class="lazy-ads "></div>
+						</div>
+						<?php $ad .= ob_get_clean();
+						return $m[0] . $ad;// ;
+					}else if($matchcount == 4 and $new_template =='Si'){
+						echo $matchcount;
+						ob_start();?>
+						<div class="lc_ads">
+							<div id="ads-NT-fourth-h2" class="lazy-ads "></div>
+						</div>
+						<?php $ad .= ob_get_clean();
+						return $m[0] . $ad;// ;
+					}else if($matchcount == 6 and $new_template =='Si'){
+						echo $matchcount;
+						ob_start();?>
+						<div class="lc_ads">
+							<div id="ads-NT-sixth-h2" class="lazy-ads "></div>
+						</div>
+						<?php $ad .= ob_get_clean();
+						return $m[0] . $ad;// ;
+					}else{
+						return $m[0];
+					}                
+			}
+			
+		  $purified_content = preg_replace_callback('/<h2(.*)>(.*)<\/h2>/', 'insert_ads', $purified_content);
+
+
 			echo $purified_content; 
 
 
-			?>	
-		</div>
-	</div>
+			?>
+        </div>
+    </div>
 </div>
 <!--
 <div class="container-fluid scp-contact shadow" id="contacto">
@@ -123,8 +177,8 @@
 
 
 <div class="container">
-	<div class="row">
-		<?php 
+    <div class="row">
+        <?php 
 			$galeria = array();
 			for($i=1;$i<=5;$i++){
 				$img_post_id = get_post_meta($post->ID, 'escuela_galeria'.$i, true);
@@ -133,20 +187,18 @@
 			}
 		 ?>
 
-		<?php 
+        <?php 
 			$GLOBALS["galeria"] = $galeria;
 		    get_template_part("post_templates/widgets/galeria"); ?>
 
-	</div>
+    </div>
 </div>
 
-<?php get_template_part("post_templates/widgets/post_type_relacionados");?>			
+<?php get_template_part("post_templates/widgets/post_type_relacionados");?>
 
 <?php comments_template("/comments.php");?>
 
 </div>
 
 
-<?php get_template_part("post_templates/nivel/escuela-municipio");?>			
-
-		 
+<?php get_template_part("post_templates/nivel/escuela-municipio");?>

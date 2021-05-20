@@ -123,3 +123,29 @@ header .btn { font-size: 14px; padding: 7px; text-transform: uppercase; font-wei
 ol.breadcrumb {margin: 5px 0}
 .breadcrumb li {line-height: normal; margin-bottom: 0; }
 .breadcrumb>li+li:before { padding: 0 5px; color: #ccc; content: "/\00a0"; }
+
+/** Para los diferentes tamaños de ads **/
+@media(min-width: 800px) { .ad_different_sizes { width: 728px; height: 90px; } }
+ 
+ /** para combatir el display: block; en <ins **/
+ .adsbygoogle.ad_different_sizes {
+    display: inline !important;
+}
+
+.lc_ads-90 { height: 300px; width: auto; } /* small banner */  
+.lc_ads-280 { height: 300px; width: auto; } /* Anuncios responsive */  
+.lc_ads-429 { height: 305px;  width: auto; } /* Anuncios in-article */  
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+.lc_ads-90 { height: 250px; width: auto; }   
+.lc_ads-280 { height: 250px; width: auto; }   
+.lc_ads-429 { height: 336px;  width: auto; } 
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+.lc_ads-90 { height: 90px; width: auto; }   
+.lc_ads-280 { height: 280px; width: auto; } 
+.lc_ads-429 { height: 429px;  width: auto; } 
+ }

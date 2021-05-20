@@ -69,7 +69,14 @@
 ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/lazy-load.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/ads/main.js"></script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
+<?php if($post->ID == 110): //colegio ?>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/ads/listado-colegios.js"></script>
+<?php elseif($post->post_type === "colegio"): ?>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/ads/colegio.js"></script>
+<?php endif; ?>
 </div>
 </body>
 </html>
